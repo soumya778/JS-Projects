@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background:burlywood
+        }
+
+        .nav{
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 30px;
+        }
+        .search{
+            width: 30%;
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: center;
+        }
+        .search input{
+            padding: 3px;
+            width: 100%;
+        }
+        button{
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: black;
+            color: aliceblue;
+        }
+        .items{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .item{
+            background-color:WHITE;
+            width: 30%;
+            padding: 14px;
+            text-transform: uppercase;
+            margin-top: 8px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <h2 style="font-family: Algerian;">TO-DO LIST</h2>
+            <div class="search">
+                <input type="text" name="" id="input-items" placeholder="I need to">
+                <button onclick="additem()">Submit</button>
+            </div>
+        </div>
+        <div id="doitems">
+             
+        </div>
+    </div>
+  <script>
+       //accessing HTML elementa by DOM
+       const inputitems=document.getElementById("input-items")
+       const doitems=document.getElementById("doitems")
+       inputitems.addEventListener("keydown",function(event){
+        if(event.key=="Enter"){
+        additem()
+        }
+       })
+       function additem(){
+        // const div=document.createElement("div")
+        const div=document.createElement("div")
+        div.className='items'
+        const p=document.createElement("p")
+        p.className='item'
+        p.innerHTML='<span>'+inputitems.value+'</span>'
+        inputitems.value=" "
+        // item.appendchild('p')
+        // console.log(div)
+        div.appendChild(p)
+        // items.insertAdjacentElement("beforeend",div)
+        // console.log(div)
+        doitems.appendChild(div)
+       
+    //    function delitems(){
+            div.addEventListener("click",function(){
+                // div.style.backgroundColor="red"
+                div.removeChild(p)
+            })
+       }
+      
+  </script>  
+</body>
+</html>
