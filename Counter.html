@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        /* styling the page */
+        p,h1{
+            margin: 0;
+        }
+        body{
+            background-color: burlywood;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container{
+            border: 2px solid black;
+            width: 30%;
+            padding: 20px;
+            text-align: center;
+            background-color: beige;
+            margin: auto;
+        }
+        button{
+            cursor: pointer;
+            padding: 10px;
+        }
+        button:hover{
+            translate: 2px 2px;
+            background-color: burlywood;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Counter</h1>
+    <div id="display">
+        <p id="message-output" style="font-size: 120px;">0</p>
+    </div>
+    <br>
+    <div class="control">
+        <button onclick="up()">Increase</button>
+        <button onclick="down()">Decrease</button>
+    </div>
+    </div>
+
+
+
+    <script>
+        let index=0;
+        const up=()=>{
+                document.getElementById("message-output").innerHTML=++index
+        }
+        const down=()=>{
+                document.getElementById("message-output").innerHTML=--index
+        }
+    </script>
+</body>
+</html>
