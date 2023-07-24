@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meassaging App</title>
+    <style>
+        body{
+            background-color: rgba(77, 100, 133, 0.849);
+        }
+        .container{
+            border: 2px solid black;
+            margin: auto;
+            /* display: flex; */
+            flex-direction: column;
+            align-items: center;
+            height: 230px;
+            background-color: antiquewhite;
+            margin-top: 130px;
+            width: 35%;
+        }
+        .input{
+            margin-left: 10px;
+        }
+        button{
+            cursor: pointer;
+        }
+        button:hover{
+            translate: 2px 3px;
+        }
+        @media only screen and (max-width:600){
+            .container{
+                width: 50%;
+            }
+        }
+          
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main" style="text-align: center;">
+       <h3>Pass the message</h3>
+        </div>
+        <hr>
+        <div class="input">
+        <label for="message input">Enter the message</label>
+        <br>
+            <button><i class="fa fa-comments-o" aria-hidden="true">M</i></button>
+            <input type="text" id="messageinput">
+        </div>
+        <br>
+        <button onclick="getMessage()">Submit</button>
+        <p id="message-output" style="text-align: center;text-transform: capitalize; font-size: 20px;">
+        
+        </p>
+
+    </div>
+    <script>
+        const messageInput=document.getElementById("messageinput")
+        messageInput.addEventListener("keydown",function(event){
+            if(event.key=="Enter")
+            getMessage()
+        })
+
+        function getMessage(){
+        document.getElementById("message-output").innerHTML=messageInput.value
+        messageInput.value=" "
+        }
+    </script>
+</body>
+</html>
