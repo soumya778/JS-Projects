@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Your Grocery</title>
+    <style>
+       body{
+          background-color:lightsalmon ;
+          font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          }
+          .container{
+            border: 2px solid rgb(99, 98, 98);
+            background-color: lightgoldenrodyellow;
+            box-shadow: 2px 2px lightgray;
+             width: 30%;
+             height: 100vh;
+          }
+          input{
+            padding: 9px;
+            font-family: Lucida Calligraphy;
+            border: 0;
+            outline: 0;
+            border-bottom: 1.5px solid black;
+            background-color: lightgoldenrodyellow;
+
+            font-size: 1rem;
+          }
+          #allitems{
+            margin: 15px 10px 0 50px;
+            font-size: 1.5rem;
+            font-family: inherit;
+          }
+          @media only screen and(max-width:1024px) {
+            .container{
+                width: 100%;
+            }
+            
+          }
+    </style>
+</head>
+<body>
+     <div class="container">
+        <h1 style="text-align: center;">Grocery list</h1>
+        <div class="input" style="text-align: center;">
+            <button style="font-size: 15px;">
+                >>
+            </button>
+                 <!-- <i class="fa-solid fa-pencil"></i> -->
+           <input type="text" id="input-items">
+        </div>
+        <hr>
+        <div id="allitems">
+            <!-- <h4></h4> -->
+        </div>
+    </div>
+    <script>
+        const list=document.getElementById("input-items")
+        const listitems=document.getElementById("allitems")
+        list.addEventListener("keydown",function(event){
+            if(event.key=="Enter")
+             output()
+        })
+  
+         function output(){
+            let h4=document.createElement("h4")
+            h4.innerHTML=" -"+list.value
+            h4.addEventListener("click",function(){
+           h4.style.textDecoration="line-through"
+           }) 
+           listitems.insertAdjacentElement("beforeend",h4)
+          //  console.log(allitems)
+           list.value=" "
+        }
+            
+        // function output(){
+        //     const additem=list.value 
+        //     list.value=" "
+        //     let p=document.createElement("p")
+        //     p.innerHTML="-"+additem
+        //     listitems.appendChild(p)
+
+
+            
+        // }
+           
+        
+        </script>
+</body>
+</html> 
